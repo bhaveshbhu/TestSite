@@ -1,0 +1,280 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>BlUEGAPE</title>
+<link rel="stylesheet" type="text/css" href="css/style.css" />
+<meta name="BLUEGAPE" content="BLUEGAPE SITE" />
+	<script type="text/javascript" src="js/jquery-1.2.6.min.js"></script>
+	<script type="text/javascript" src="js/jquery-easing-1.3.pack.js"></script>
+	<script type="text/javascript" src="js/jquery-easing-compatibility.1.2.pack.js"></script>
+	<script type="text/javascript" src="js/coda-slider.1.1.1.pack.js"></script>
+		<script type="text/javascript">
+	var theInt = null;
+		var $crosslink, $navthumb;
+		var curclicked = 0;
+		
+		theInterval = function(cur){
+			clearInterval(theInt);
+			if( typeof cur != 'undefined' )
+				curclicked = cur;
+			
+		$crosslink.children().removeClass("active-thumbnail");
+		$(".cross-link p").removeClass("active1");
+			$navthumb.eq(curclicked).addClass("active-thumbnail");
+				$(".cross-link p").eq(curclicked).addClass("active1");
+				$(".stripNav ul li a ").eq(curclicked).trigger('click');
+			
+			theInt = setInterval(function(){
+				$(".cross-link p").removeClass("active1");
+				$crosslink.children().removeClass("active-thumbnail");
+				$navthumb.eq(curclicked).addClass("active-thumbnail");
+				$(".cross-link p").eq(curclicked).addClass("active1");
+				$(".stripNav ul li a ").eq(curclicked).trigger('click');
+				curclicked++;
+				if( 7 == curclicked )
+					curclicked = 0;
+				
+			}, 3000);
+		};
+		
+		$(function(){
+			$("#header").codaSlider();
+			$navthumb = $(".nav-thumb");
+			$crosslink = $(".cross-link");
+			$navthumb.click(function() {
+				var $this = $(this);
+				theInterval($this.parent().attr('href').slice(1) - 1);
+				return false;
+			});
+			theInterval();
+		});
+	</script>
+</head>
+
+<body id="home">
+<div id="container">
+	<div id="holder" >
+		<div id="logo">
+		<div id="header_links_container">
+		<div id="menu_top">
+	<div id="menu_pos"><span id="text_left"><a href="#">Sign In</a> </span>  <span id="text_right"><a href="#" >Cart(0)</a></span></div>
+		</div>
+		<ul id="menu_bottom"><li class="same_line"><a href="#">Products</a></li><li class="same_line"><a href="#">Accessories</a></li><li class="same_line"><a href="#">Ideas</a></li><li class="same_line"><a href="#">Your Account</a></li><li class="same_line" id="same_line1"><a href="#">Ask</a><span class="index_pos"><ul class="sub_menu"><li><a href="#">Where's my order</a></li><li><a href="#">Artwork guidelines</a></li><li><a href="#">Order a sample</a></li><li><a href="#">Get a price quote</a></li><li><a href="#">More FAQs</a></li><li><a href="#">About</a></li><li><a href="#">Contact</a></li></ul></span></li></ul>
+		</div>
+	  </div>
+<div id="header_holder">
+<div id="header">
+<div class="panelContainer">
+<div class="panel" title="Panel 1">
+					<div class="wrapper">
+						<img src="image/head1.png" alt="temp" />
+					</div>
+				</div>
+				<div class="panel" title="Panel 2">
+					<div class="wrapper">
+						<img src="image/head2.jpg" alt="temp" />
+					</div>
+				</div>		
+				<div class="panel" title="Panel 3">
+					<div class="wrapper">
+					<img src="image/head3.jpg" alt="scotch egg" class="floatLeft"/>
+					</div>
+				</div>
+				<div class="panel" title="Panel 4">
+					<div class="wrapper">
+						<img src="image/head4.jpg" alt="temp" />
+					</div>
+				</div>
+				<div class="panel" title="Panel 5">
+					<div class="wrapper">
+						<img src="image/head5.jpg" alt="temp" />
+					</div>
+				</div>
+				<div class="panel" title="Panel 6">
+					<div class="wrapper">
+					<img src="image/head6.jpg" alt="temp" />
+						</div>
+				</div>
+				<div class="panel" title="Panel 7">
+					<div class="wrapper">
+					<img src="image/head7.jpg" alt="temp" />
+						</div>
+				</div>
+
+			</div>
+		</div>
+<div class="thumbnail_container">
+<ul  class="thumb_body">
+<li class="thumb_main">
+<a  href="#1" class="cross-link">
+<img src="image/1.png" class="nav-thumb active-thumbnail" alt="temp-thumb" />
+<p class="active1">Welcome to Moo</p>
+</a>
+</li>
+<li class="thumb_main">
+<a  href="#2" class="cross-link">
+<img src="image/2.png" class="nav-thumb" alt="temp-thumb" />
+<p>Business Cards</p>
+</a>
+</li>
+<li class="thumb_main">
+<a href="#3" class="cross-link"> 
+<img src="image/3.png" class="nav-thumb" alt="temp-thumb" />
+<p>Luxe Business Cards</p>
+</a>
+</li>
+<li class="thumb_main">
+<a href="#4" class="cross-link"> 
+<img src="image/4.png" class="nav-thumb" alt="temp-thumb" />
+<p>Mini Cards</p>
+</a>
+</li>
+<li class="thumb_main">
+<a  href="#5" class="cross-link">
+<img src="image/5.png" class="nav-thumb" alt="temp-thumb" />
+<p>Postcards</p>
+</a>
+</li>
+<li class="thumb_main">
+<a  href="#6" class="cross-link">
+<img src="image/6.png" class="nav-thumb" alt="temp-thumb" />
+<p>Stickers and Labels</p>
+</a>
+</li>
+<li class="thumb_main" class="active_slide">
+<a href="#7" class="cross-link">
+<img src="image/7.png" class="nav-thumb" alt="temp-thumb" />
+<p>Rounded Corners</p>
+</a>
+</li>
+</ul>
+</div>
+</div>
+		<div id="content_main">
+		<div id="content_body">
+			<ul id="content1">
+			<li><img src="image/tshirts.png" /></li>
+			<li><img src="image/funnytshirt.png" /></li>
+			<li><img src="image/cutetshirt.png" /></li>
+			<li><img src="image/undertshirt.png" /></li>
+			<li><img src="image/irishtshirt.png" /></li>
+			<li><img src="image/shamrocktshirt.png" /></li>
+			<li><img src="image/create.png" /></li>
+			</ul>
+			<div class="body_links">
+			<div class="body_links_pos"><a href="#">Funny</a></div><div class="body_links_pos"><a href="#">Cute</a></div><div class="body_links_pos"><a href="#">Under$20</a></div><div class="body_links_pos"><a href="#">Irish</a></div><div class="body_links_pos"><a href="#">Shamrock</a>
+			</div>
+			</div>
+			</div>
+			
+			<div id="content_body">
+			<ul id="content1">
+			<li><img src="image/posters.png" /></li>
+			<li><img src="image/funnytshirt.png" /></li>
+			<li><img src="image/cutetshirt.png" /></li>
+			<li><img src="image/undertshirt.png" /></li>
+			<li><img src="image/irishtshirt.png" /></li>
+			<li><img src="image/shamrocktshirt.png" /></li>
+			<li><img src="image/create.png" /></li>
+			</ul>
+			<div class="body_links">
+			<div class="body_links_pos"><a href="#">Funny</a></div><div class="body_links_pos"><a href="#">Cute</a></div><div class="body_links_pos"><a href="#">Under$20</a></div><div class="body_links_pos"><a href="#">Irish</a></div><div class="body_links_pos"><a href="#">Shamrock</a>
+			</div>
+			</div>
+			</div>
+			<div id="content_body">
+			<ul id="content1">
+			<li><img src="image/stickers.png" /></li>
+			<li><img src="image/funnytshirt.png" /></li>
+			<li><img src="image/cutetshirt.png" /></li>
+			<li><img src="image/undertshirt.png" /></li>
+			<li><img src="image/irishtshirt.png" /></li>
+			<li><img src="image/shamrocktshirt.png" /></li>
+			<li><img src="image/create.png" /></li>
+			</ul>
+			<div class="body_links">
+			<div class="body_links_pos"><a href="#">Funny</a></div><div class="body_links_pos"><a href="#">Cute</a></div><div class="body_links_pos"><a href="#">Under$20</a></div><div class="body_links_pos"><a href="#">Irish</a></div><div class="body_links_pos"><a href="#">Shamrock</a>
+			</div>
+			</div>
+			</div>
+			<div id="content_body">
+			<ul id="content1">
+			<li><img src="image/laptopscreens.png" /></li>
+			<li><img src="image/funnytshirt.png" /></li>
+			<li><img src="image/cutetshirt.png" /></li>
+			<li><img src="image/undertshirt.png" /></li>
+			<li><img src="image/irishtshirt.png" /></li>
+			<li><img src="image/shamrocktshirt.png" /></li>
+			<li><img src="image/create.png" /></li>
+			</ul>
+			<div class="body_links">
+			<div class="body_links_pos"><a href="#">Funny</a></div><div class="body_links_pos"><a href="#">Cute</a></div><div class="body_links_pos"><a href="#">Under$20</a></div><div class="body_links_pos"><a href="#">Irish</a></div><div class="body_links_pos"><a href="#">Shamrock</a>
+			</div>
+			</div>
+			</div>
+	 </div>
+	 <div id="footer">
+		<div id="footer_body">
+		<div id="footer-content">
+		<div id="footer_left_column">
+		<div id="footer_sub_column">
+		<span class="footer-sub-head">Categories</span>
+<a class="footer-link" href="#">Posters</a>
+<a class="footer-link" href="#">Laptop Screens</a>
+<a class="footer-link" href="#">Tshirts</a>
+<a class="footer-link" href="#">Accesories</a>
+		</div>
+		<div id="footer_sub_column">
+		<span class="footer-sub-head">Useful Stuff</span>
+<a class="footer-link" href="#">Prices & Discount</a>
+<a class="footer-link" href="#">Delivery & turnaround times</a>
+<a class="footer-link" href="#">Artwork guidelines</a>
+		</div>
+		<div id="footer_sub_column">
+		<span class="footer-sub-head">Categories</span>
+<a class="footer-link" href="#">Posters</a>
+<a class="footer-link" href="#">Laptop Screens</a>
+<a class="footer-link" href="#">Tshirts</a>
+<a class="footer-link" href="#">Accesories</a>
+		</div>
+		<div id="footer_sub_column">
+		<span class="footer-sub-head">Contact</span>
+<a class="footer-link" href="#">Contact us</a>
+<a class="footer-link" href="#">Blog</a>
+<a class="footer-link" href="#">Newsletter</a>
+<a class="footer-link" href="#">Twitter</a>
+<a class="footer-link" href="#">Social</a>
+</div>
+<div id="footer_sub_column">
+		<span class="footer-sub-head">Categories</span>
+<a class="footer-link" href="#">Posters</a>
+<a class="footer-link" href="#">Laptop Screens</a>
+<a class="footer-link" href="#">Tshirts</a>
+<a class="footer-link" href="#">Accesories</a>
+		</div>
+<div id="footer_sub_column">
+<span class="footer-sub-head">We Ship</span>
+<a class="footer-link" href="#">All Over India</a>
+</div></div>
+</div>
+<div id="cards_pos">
+		<div id="card_body">
+			<b>We Accept:</b></br>
+	<img src="image/cards.png" />
+	</div>
+	</div>
+	</div>
+	<div id="footer_base">
+	<div id="footer_image">
+	<img src="image/footer_link.png" />
+	</div>
+	<div id="footer_copyright">
+    <div id="copyright-body" ><img src="image/logo_small.png" /><div id="copyright_pos"><span id="copyright-text">Bluegape Corp. All rights reserved. Material Design can not be copied without permission</span><span id="copyright-terms"><span id="copyright_pos_terms"><a href="#">Terms and Condition</a></span><span id="copyright_pos_terms"><a href="#"> Privacy Policy</a></span></span></div>
+	</div>
+    </div>
+    </div>
+	</div>
+	</div>
+</body>
+</html>
